@@ -1,20 +1,244 @@
-/* index.css básico para RollingMovies */
+/* ===========================
+   ROLLINGMOVIES - ESTILO BASE
+   =========================== */
+
+/* 1) Layout general para que el footer quede abajo */
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+#root {
+  height: 100%;
+}
+
+.app-wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-main {
+  flex: 1;
+}
+
+/* 2) Paleta de colores y tipografías */
+:root {
+  --rm-negro-carbon: #0d0d0d;   /* Fondo principal */
+  --rm-gris-azulado: #1a1f2b;   /* Fondos secundarios */
+  --rm-rojo-cine: #e50914;      /* Botones y acentos */
+  --rm-gris-claro: #b3b3b3;     /* Texto secundario */
+  --rm-blanco: #ffffff;         /* Texto principal */
+}
 
 * {
   box-sizing: border-box;
 }
 
+/* 3) Estilo global del body */
 body {
-  margin: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    sans-serif;
-  background-color: #000; /* o #111 si querés más gris tipo Netflix */
-  color: #f8f9fa;
+  background-color: var(--rm-negro-carbon);
+  color: var(--rm-blanco);
+  font-family: "Roboto", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
 }
 
+/* Títulos con Cinzel para look de póster de cine */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Cinzel", serif;
+}
+
+/* Texto secundario */
+p,
+span,
+small,
+label {
+  color: var(--rm-gris-claro);
+}
+
+/* 4) Navbar */
+.navbar {
+  background-color: var(--rm-negro-carbon) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.navbar-brand {
+  font-family: "Cinzel", serif;
+  letter-spacing: 0.04em;
+  color: var(--rm-blanco) !important;
+}
+
+.navbar-brand i {
+  color: var(--rm-rojo-cine);
+}
+
+.nav-link {
+  color: var(--rm-gris-claro) !important;
+  font-weight: 400;
+}
+
+.nav-link:hover {
+  color: var(--rm-rojo-cine) !important;
+}
+
+.nav-link.active {
+  color: var(--rm-rojo-cine) !important;
+  font-weight: 500;
+}
+
+/* 5) Footer */
+footer {
+  background-color: var(--rm-negro-carbon);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+footer p {
+  color: var(--rm-gris-claro);
+}
+
+footer i {
+  color: var(--rm-gris-claro);
+  font-size: 1.2rem;
+}
+
+footer i:hover {
+  color: var(--rm-rojo-cine);
+}
+
+/* 6) Sección destacada (hero) y secciones oscuras */
+section.bg-dark,
+.bg-dark {
+  background-color: var(--rm-gris-azulado) !important;
+}
+
+.bg-black {
+  background-color: var(--rm-negro-carbon) !important;
+}
+
+/* 7) Cards de películas (Home) */
+.card {
+  background-color: var(--rm-gris-azulado);
+  border: none;
+  color: var(--rm-blanco);
+}
+
+.card-title {
+  font-family: "Cinzel", serif;
+  font-size: 1rem;
+}
+
+.card-text {
+  font-size: 0.9rem;
+}
+
+/* 8) Botones */
+.btn-primary {
+  background-color: var(--rm-rojo-cine);
+  border-color: var(--rm-rojo-cine);
+  color: var(--rm-blanco);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #b00710;
+  border-color: #b00710;
+}
+
+.btn-outline-light {
+  border-color: var(--rm-blanco);
+  color: var(--rm-blanco);
+}
+
+.btn-outline-light:hover,
+.btn-outline-light:focus {
+  background-color: var(--rm-blanco);
+  color: var(--rm-negro-carbon);
+}
+
+.btn-light {
+  background-color: var(--rm-blanco);
+  color: var(--rm-negro-carbon);
+  border-color: var(--rm-blanco);
+}
+
+.btn-light:hover,
+.btn-light:focus {
+  background-color: #f0f0f0;
+}
+
+/* Botones de acciones pequeñas en Admin */
+.btn-outline-secondary,
+.btn-outline-danger,
+.btn-outline-warning {
+  font-size: 0.8rem;
+}
+
+/* 9) Formularios (Login, Registro, Contacto) */
+.form-control,
+.form-select {
+  background-color: #11141d;
+  border: 1px solid #2a3242;
+  color: var(--rm-blanco);
+}
+
+.form-control::placeholder {
+  color: #7a8194;
+}
+
+.form-control:focus,
+.form-select:focus {
+  background-color: #11141d;
+  border-color: var(--rm-rojo-cine);
+  box-shadow: 0 0 0 0.2rem rgba(229, 9, 20, 0.25);
+  color: var(--rm-blanco);
+}
+
+.form-label {
+  color: var(--rm-blanco);
+}
+
+/* 10) Tablas (AdminPeliculas) */
+.table {
+  color: var(--rm-blanco);
+  background-color: var(--rm-negro-carbon);
+}
+
+.table thead {
+  background-color: #151822;
+}
+
+.table tbody tr {
+  background-color: var(--gr-negro-carbon);
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: #12151f;
+}
+
+.table td,
+.table th {
+  border-color: #25293a;
+}
+
+/* 11) Enlaces genéricos */
+a {
+  color: var(--rm-rojo-cine);
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ff3340;
+  text-decoration: underline;
+}
+
+/* 12) Ajuste ligero para main (no obligatorio) */
 main {
-  min-height: 60vh; /* opcional, solo para que no se vea tan chiquito */
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
 }
-
-/* Si querés que el texto por defecto sea claro sobre fondos oscuros,
-   pero en páginas con bg-white podés usar clases de Bootstrap */

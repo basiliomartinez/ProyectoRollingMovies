@@ -1,3 +1,4 @@
+// src/App.jsx
 import { BrowserRouter, Routes, Route } from "react-router";
 import Inicio from "./components/pages/Inicio";
 import DetallePelicula from "./components/pages/DetallePelicula";
@@ -13,18 +14,26 @@ import Footer from "./components/shared/Footer";
 const App = () => {
   return (
     <BrowserRouter>
-      <Menu />
-      <Routes>
-        <Route path="/" element={<Inicio />} />
-        <Route path="/detalle/:id" element={<DetallePelicula />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/registro" element={<Registro />} />
-        <Route path="/contacto" element={<Contacto />} />
-        <Route path="/acerca" element={<AcercaNosotros />} />
-        <Route path="/administrador" element={<AdminPeliculas />} />
-        <Route path="*" element={<Error404 />} />
-      </Routes>
-      <Footer />
+      {/* ESTE wrapper es el que necesitamos para el footer */}
+      <div className="app-wrapper">
+        <Menu />
+
+        {/* Zona que se estira y empuja el footer hacia abajo */}
+        <div className="app-main">
+          <Routes>
+            <Route path="/" element={<Inicio />} />
+            <Route path="/detalle/:id" element={<DetallePelicula />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/registro" element={<Registro />} />
+            <Route path="/contacto" element={<Contacto />} />
+            <Route path="/acerca" element={<AcercaNosotros />} />
+            <Route path="/administrador" element={<AdminPeliculas />} />
+            <Route path="*" element={<Error404 />} />
+          </Routes>
+        </div>
+
+        <Footer />
+      </div>
     </BrowserRouter>
   );
 };
