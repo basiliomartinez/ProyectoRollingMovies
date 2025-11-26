@@ -14,12 +14,14 @@ import Footer from "./components/shared/Footer";
 const App = () => {
   return (
     <BrowserRouter>
-      {/* ESTE wrapper es el que necesitamos para el footer */}
+      {/* CONTENEDOR GENERAL DEL LAYOUT */}
       <div className="app-wrapper">
+        
+        {/* NAV */}
         <Menu />
 
-        {/* Zona que se estira y empuja el footer hacia abajo */}
-        <div className="app-main">
+        {/* ESTE main ES EL QUE SE ESTIRA Y EMPUJA EL FOOTER HACIA ABAJO */}
+        <main className="app-main container my-4">
           <Routes>
             <Route path="/" element={<Inicio />} />
             <Route path="/detalle/:id" element={<DetallePelicula />} />
@@ -30,8 +32,9 @@ const App = () => {
             <Route path="/administrador" element={<AdminPeliculas />} />
             <Route path="*" element={<Error404 />} />
           </Routes>
-        </div>
+        </main>
 
+        {/* FOOTER */}
         <Footer />
       </div>
     </BrowserRouter>

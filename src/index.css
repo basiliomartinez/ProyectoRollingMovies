@@ -1,244 +1,163 @@
-/* ===========================
-   ROLLINGMOVIES - ESTILO BASE
-   =========================== */
+/* ===============================
+   Layout general para footer abajo
+   =============================== */
 
-/* 1) Layout general para que el footer quede abajo */
+/* Que la app pueda medir el 100% de alto */
 html,
-body {
-  height: 100%;
-  margin: 0;
-}
-
+body,
 #root {
   height: 100%;
 }
 
+/* Contenedor principal de la app */
 .app-wrapper {
-  min-height: 100%;
+  min-height: 100vh;      /* ocupa al menos el alto de la pantalla */
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* columna: header / main / footer */
 }
 
 .app-main {
   flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
-/* 2) Paleta de colores y tipografías */
+
+/* ===============================
+   Variables de color estilo Flow
+   =============================== */
 :root {
-  --rm-negro-carbon: #0d0d0d;   /* Fondo principal */
-  --rm-gris-azulado: #1a1f2b;   /* Fondos secundarios */
-  --rm-rojo-cine: #e50914;      /* Botones y acentos */
-  --rm-gris-claro: #b3b3b3;     /* Texto secundario */
-  --rm-blanco: #ffffff;         /* Texto principal */
+  /* FONDOS */
+  --flow-bg: #050a0c;        /* fondo principal */
+  --flow-bg-alt: #111820;    /* fondo secundario */
+
+  /* COLORES PRINCIPALES */
+  --flow-primary: #00e5a0;       /* verde Flow */
+  --flow-primary-soft: #00c48c;  /* hover suave */
+  --flow-cyan: #00b5e2;          /* celeste opcional */
+
+  /* TEXTO */
+  --flow-text: #ffffff;
+  --flow-text-muted: #b0b8c1;
 }
 
-* {
-  box-sizing: border-box;
-}
-
-/* 3) Estilo global del body */
+/* ===============================
+   Estilos globales
+   =============================== */
 body {
-  background-color: var(--rm-negro-carbon);
-  color: var(--rm-blanco);
-  font-family: "Roboto", system-ui, -apple-system, BlinkMacSystemFont,
+  font-family: "Nunito", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
+  background-color: var(--flow-bg);
+  color: var(--flow-text);
+  margin: 0;
+  padding: 0;
 }
 
-/* Títulos con Cinzel para look de póster de cine */
+/* ===============================
+   Títulos estilo Flow
+   =============================== */
 h1,
 h2,
 h3,
 h4,
-h5,
-h6 {
-  font-family: "Cinzel", serif;
+h5 {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--flow-text);
 }
 
-/* Texto secundario */
-p,
-span,
-small,
-label {
-  color: var(--rm-gris-claro);
+/* ===============================
+   Links
+   =============================== */
+a {
+  color: var(--flow-primary);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--flow-primary-soft);
 }
 
-/* 4) Navbar */
-.navbar {
-  background-color: var(--rm-negro-carbon) !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+/* ===============================
+   Navbar estilo Flow
+   =============================== */
+.navbar,
+.navbar-dark,
+.navbar-light {
+  background-color: #000 !important;
+  border-bottom: 1px solid #0f171e;
+}
+
+.navbar a.nav-link {
+  color: var(--flow-text-muted) !important;
+}
+.navbar a.nav-link:hover {
+  color: var(--flow-primary) !important;
 }
 
 .navbar-brand {
-  font-family: "Cinzel", serif;
-  letter-spacing: 0.04em;
-  color: var(--rm-blanco) !important;
+  color: var(--flow-primary) !important;
+  font-weight: 700;
 }
 
-.navbar-brand i {
-  color: var(--rm-rojo-cine);
-}
-
-.nav-link {
-  color: var(--rm-gris-claro) !important;
-  font-weight: 400;
-}
-
-.nav-link:hover {
-  color: var(--rm-rojo-cine) !important;
-}
-
-.nav-link.active {
-  color: var(--rm-rojo-cine) !important;
-  font-weight: 500;
-}
-
-/* 5) Footer */
-footer {
-  background-color: var(--rm-negro-carbon);
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-footer p {
-  color: var(--rm-gris-claro);
-}
-
-footer i {
-  color: var(--rm-gris-claro);
-  font-size: 1.2rem;
-}
-
-footer i:hover {
-  color: var(--rm-rojo-cine);
-}
-
-/* 6) Sección destacada (hero) y secciones oscuras */
-section.bg-dark,
-.bg-dark {
-  background-color: var(--rm-gris-azulado) !important;
-}
-
-.bg-black {
-  background-color: var(--rm-negro-carbon) !important;
-}
-
-/* 7) Cards de películas (Home) */
-.card {
-  background-color: var(--rm-gris-azulado);
-  border: none;
-  color: var(--rm-blanco);
-}
-
-.card-title {
-  font-family: "Cinzel", serif;
-  font-size: 1rem;
-}
-
-.card-text {
-  font-size: 0.9rem;
-}
-
-/* 8) Botones */
+/* ===============================
+   Botones estilo Flow
+   =============================== */
 .btn-primary {
-  background-color: var(--rm-rojo-cine);
-  border-color: var(--rm-rojo-cine);
-  color: var(--rm-blanco);
+  background-color: var(--flow-primary);
+  border-color: var(--flow-primary);
+  color: #000;
 }
-
 .btn-primary:hover,
 .btn-primary:focus {
-  background-color: #b00710;
-  border-color: #b00710;
+  background-color: var(--flow-primary-soft);
+  border-color: var(--flow-primary-soft);
+  color: #000;
 }
 
-.btn-outline-light {
-  border-color: var(--rm-blanco);
-  color: var(--rm-blanco);
+.btn-secondary {
+  background-color: #1f2a33;
+  border-color: #1f2a33;
+  color: var(--flow-text);
+}
+.btn-secondary:hover {
+  background-color: #27333f;
 }
 
-.btn-outline-light:hover,
-.btn-outline-light:focus {
-  background-color: var(--rm-blanco);
-  color: var(--rm-negro-carbon);
+/* ===============================
+   Cards (tarjetas de películas)
+   =============================== */
+.card {
+  background-color: var(--flow-bg-alt);
+  border: none;
+  color: var(--flow-text);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
 }
 
-.btn-light {
-  background-color: var(--rm-blanco);
-  color: var(--rm-negro-carbon);
-  border-color: var(--rm-blanco);
+/* Badge tipo "Estreno" */
+.badge-flow {
+  background-color: var(--flow-primary);
+  color: #000;
+  font-weight: 600;
 }
 
-.btn-light:hover,
-.btn-light:focus {
-  background-color: #f0f0f0;
+/* ===============================
+   Footer estilo Flow
+   =============================== */
+footer {
+  background-color: #000;
+  color: var(--flow-text-muted);
+  padding: 20px 0;
+  text-align: center;
+  border-top: 1px solid #0f171e;
 }
 
-/* Botones de acciones pequeñas en Admin */
-.btn-outline-secondary,
-.btn-outline-danger,
-.btn-outline-warning {
-  font-size: 0.8rem;
+footer a {
+  color: var(--flow-primary);
 }
-
-/* 9) Formularios (Login, Registro, Contacto) */
-.form-control,
-.form-select {
-  background-color: #11141d;
-  border: 1px solid #2a3242;
-  color: var(--rm-blanco);
-}
-
-.form-control::placeholder {
-  color: #7a8194;
-}
-
-.form-control:focus,
-.form-select:focus {
-  background-color: #11141d;
-  border-color: var(--rm-rojo-cine);
-  box-shadow: 0 0 0 0.2rem rgba(229, 9, 20, 0.25);
-  color: var(--rm-blanco);
-}
-
-.form-label {
-  color: var(--rm-blanco);
-}
-
-/* 10) Tablas (AdminPeliculas) */
-.table {
-  color: var(--rm-blanco);
-  background-color: var(--rm-negro-carbon);
-}
-
-.table thead {
-  background-color: #151822;
-}
-
-.table tbody tr {
-  background-color: var(--gr-negro-carbon);
-}
-
-.table tbody tr:nth-child(even) {
-  background-color: #12151f;
-}
-
-.table td,
-.table th {
-  border-color: #25293a;
-}
-
-/* 11) Enlaces genéricos */
-a {
-  color: var(--rm-rojo-cine);
-  text-decoration: none;
-}
-
-a:hover {
-  color: #ff3340;
-  text-decoration: underline;
-}
-
-/* 12) Ajuste ligero para main (no obligatorio) */
-main {
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
+footer a:hover {
+  color: var(--flow-primary-soft);
 }
