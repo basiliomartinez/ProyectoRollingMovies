@@ -1,0 +1,33 @@
+.footer-cine {
+  background-color: #0d0d0d;
+  color: #ffffff;
+  padding: 40px 0;
+  border-top: 2px solid #e50914;
+}
+
+.footer-cine a {
+  color: #b3b3b3;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-cine a:hover {
+  color: #e50914;
+}
+
+.footer-cine .footer-copy {
+  font-size: 0.9rem;
+  color: #b3b3b3;
+}
+
+.footer-cine .social-icons i {
+  font-size: 1.4rem;
+  margin: 0 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer-cine .social-icons i:hover {
+  transform: scale(1.2);
+  color: #e50914;
+}
