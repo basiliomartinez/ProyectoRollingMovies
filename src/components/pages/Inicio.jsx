@@ -15,10 +15,12 @@ const Inicio = () => {
       <section className="bg-dark text-light rounded-4 p-4 mb-4">
         <Row className="align-items-center">
           <Col md={6}>
-            <h1 className="display-5 fw-bold">Dark</h1>
+            <h1 className="display-5 fw-bold">(Titulo pelicula destacada)</h1>
             <p className="lead">
-              Una serie de misterio y viajes en el tiempo que entrelaza el
-              destino de cuatro familias en un pueblo alemán.
+              <strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias
+              soluta obcaecati doloribus quis ipsam assumenda ea voluptates,
+              accusantium molestiae doloremque blanditiis fugit veritatis amet
+              quam!</strong>
             </p>
             <div className="d-flex gap-3">
               <Button variant="light">
@@ -30,8 +32,13 @@ const Inicio = () => {
             </div>
           </Col>
           <Col md={6} className="d-none d-md-block">
-            <div className="bg-secondary rounded" style={{ height: "260px" }}>
-              {/* acá después podemos poner imagen/video */}
+            <div className="bg-secondary rounded" style={{ height: "335px"}} >
+              <iframe class="link-de-youtube"
+        src="https://www.youtube.com/embed/nb_fFj_0rq8?si=sXD7aY0vIZpYYCjS"
+        title="YouTube video player"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullscreen
+      ></iframe>
             </div>
           </Col>
         </Row>
