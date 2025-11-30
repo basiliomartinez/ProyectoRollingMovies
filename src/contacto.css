@@ -16,6 +16,14 @@ Contactos css
   border-radius: 10px;
 }
 
+.dato-contacto {
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 5px 0;
+}
+
 .btn-enviar {
   font-weight: bold;
   padding: 10px;
