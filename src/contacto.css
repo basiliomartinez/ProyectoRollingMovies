@@ -61,3 +61,13 @@ Contactos css
 .twitter-x{
   color: #ffffff;
 }
+
+.icono-red {
+  cursor: pointer;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.icono-red:hover {
+  transform: scale(1.15);
+  opacity: 0.85;
+}
