@@ -41,7 +41,7 @@ const Contacto = () => {
     };
 
     setFormData(nuevo);
-  }; // ← ESTE FALTABA !!!
+  }; 
 
   // === Validación antes de enviar ===
   const validarFormulario = () => {
@@ -51,7 +51,7 @@ const Contacto = () => {
     if (formData.mensaje.trim().length < 5)
       return "El mensaje debe tener al menos 5 caracteres";
 
-    return null; // válido
+    return null; 
   };
 
   const manejarSubmit = (e) => {
