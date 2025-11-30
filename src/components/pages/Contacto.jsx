@@ -1,5 +1,13 @@
-import { Container, Form, Button, Row, Col, Card, Modal } from "react-bootstrap";
-import { useState, useEffect } from "react";
+import {
+  Container,
+  Form,
+  Button,
+  Row,
+  Col,
+  Card,
+  Modal,
+} from "react-bootstrap";
+import { useState } from "react";
 
 import "../../contacto.css";
 
@@ -22,18 +30,10 @@ const Contacto = () => {
     mensaje: "",
   });
 
-  // === Cargar datos guardados ===
-  useEffect(() => {
-    const saved = localStorage.getItem("contacto");
-    if (saved) {
-      setFormData(JSON.parse(saved));
-    }
-  }, []);
-
   // === Modal ===
   const [showModal, setShowModal] = useState(false);
 
-  // Guardar cambio en inputs y localStorage
+  // Manejar cambio en inputs
   const manejarCambio = (e) => {
     const nuevo = {
       ...formData,
@@ -41,10 +41,7 @@ const Contacto = () => {
     };
 
     setFormData(nuevo);
-
-    // Guardar automáticamente en localStorage
-    localStorage.setItem("contacto", JSON.stringify(nuevo));
-  };
+  }; // ← ESTE FALTABA !!!
 
   // === Validación antes de enviar ===
   const validarFormulario = () => {
@@ -71,34 +68,31 @@ const Contacto = () => {
     // Mostrar modal
     setShowModal(true);
 
-    // === Limpiar formulario ===
+    // Limpiar formulario
     setFormData({
       nombre: "",
       email: "",
       asunto: "",
       mensaje: "",
     });
-
-    // Borrar localStorage
-    localStorage.removeItem("contacto");
   };
 
   return (
     <main className="container my-4 pagina-contacto">
-      
       <h1 className="text-center mb-2">Contacto</h1>
-      <h5 className="text-center mb-4">
+
+      <h5 className="text-center mb-4 text-dark">
         Estamos para ayudarte. Completá el formulario o escribinos por nuestras
         redes. Respondemos dentro de las próximas 24 hs.
-
       </h5>
 
       <Row className="g-4 justify-content-center">
-
         {/* FORMULARIO */}
         <Col xs={12} md={6}>
           <Card className="shadow-sm p-3 card-formulario">
-            <Card.Title className="text-center mb-3">Envíanos un mensaje</Card.Title>
+            <Card.Title className="text-center mb-3">
+              Envíanos un mensaje
+            </Card.Title>
 
             <Form onSubmit={manejarSubmit}>
               <Form.Group className="mb-3 grupo-contacto">
@@ -146,22 +140,36 @@ const Contacto = () => {
                 />
               </Form.Group>
 
-              <Button className="w-100 btn-enviar" variant="primary" type="submit">
+              <Button
+                className="w-100 btn-enviar"
+                variant="primary"
+                type="submit"
+              >
                 Enviar
               </Button>
             </Form>
           </Card>
         </Col>
 
-        {/* INFO DE CONTACTO */}
+        {/* INFO */}
         <Col xs={12} md={4}>
           <Card className="shadow-sm p-3 card-info">
-            <Card.Title className="text-center mb-3">Información de contacto</Card.Title>
+            <Card.Title className="text-center mb-3">
+              Información de contacto
+            </Card.Title>
 
-            <p className="dato-contacto"><BsEnvelopeFill /> contactenos@rollingmovies.com</p>
-            <p className="dato-contacto"><BsTelephoneFill /> +54 9 381 333-3333</p>
-            <p className="dato-contacto"><BsWhatsapp /> WhatsApp: +54 9 381 222-2222</p>
-            <p className="dato-contacto"><BsGeoAltFill /> Tucumán, Argentina</p>
+            <p className="dato-contacto">
+              <BsEnvelopeFill /> contactenos@rollingmovies.com
+            </p>
+            <p className="dato-contacto">
+              <BsTelephoneFill /> +54 9 381 333-3333
+            </p>
+            <p className="dato-contacto">
+              <BsWhatsapp /> WhatsApp: +54 9 381 222-2222
+            </p>
+            <p className="dato-contacto">
+              <BsGeoAltFill /> Tucumán, Argentina
+            </p>
 
             <hr />
 
@@ -178,7 +186,9 @@ const Contacto = () => {
         {/* MAPA */}
         <Col xs={12}>
           <Card className="shadow-sm p-3 mt-4 card-mapa">
-            <Card.Title className="text-center mb-3">Nuestra ubicación</Card.Title>
+            <Card.Title className="text-center mb-3">
+              Nuestra ubicación
+            </Card.Title>
 
             <div className="contenedor-mapa">
               <iframe
@@ -190,7 +200,6 @@ const Contacto = () => {
             </div>
           </Card>
         </Col>
-
       </Row>
 
       {/* MODAL */}
@@ -207,7 +216,6 @@ const Contacto = () => {
           </Button>
         </Modal.Footer>
       </Modal>
-
     </main>
   );
 };
