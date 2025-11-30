@@ -81,7 +81,7 @@ const Contacto = () => {
     <main className="container my-4 pagina-contacto">
       <h1 className="text-center mb-2">Contacto</h1>
 
-      <h5 className="text-center mb-4 text-dark">
+      <h5 className="text-center mb-4 subtitulo-contacto">
         Estamos para ayudarte. Completá el formulario o escribinos por nuestras
         redes. Respondemos dentro de las próximas 24 hs.
       </h5>
