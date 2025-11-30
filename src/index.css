@@ -1,19 +1,69 @@
-/* index.css básico para RollingMovies */
+/* ===============================
+   Layout general para footer abajo
+   =============================== */
 
-* {
-  box-sizing: border-box;
+/* Que la app pueda medir el 100% de alto */
+html,
+body,
+#root {
+  height: 100%;
 }
 
+/* Contenedor principal de la app */
+.app-wrapper {
+  min-height: 100vh;      /* ocupa al menos el alto de la pantalla */
+  display: flex;
+  flex-direction: column; /* columna: header / main / footer */
+}
+
+.app-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* ===============================
+   Variables de color estilo Flow
+   =============================== */
+:root {
+  /* FONDOS */
+  --flow-bg: #050a0c;        /* fondo principal */
+  --flow-bg-alt: #111820;    /* fondo secundario */
+
+  /* COLORES PRINCIPALES */
+  --flow-primary: #00e5a0;       /* verde Flow */
+  --flow-primary-soft: #00c48c;  /* hover suave */
+  --flow-cyan: #00b5e2;          /* celeste opcional */
+
+  /* TEXTO */
+  --flow-text: #ffffff;
+  --flow-text-muted: #b0b8c1;
+}
+
+/* ===============================
+   Estilos globales
+   =============================== */
 body {
+  font-family: "Nunito", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  background-color: var(--flow-bg);
+  color: var(--flow-text);
   margin: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    sans-serif;
-  background-color: #000; /* o #111 si querés más gris tipo Netflix */
-  color: #f8f9fa;
+  padding: 0;
 }
 
-main {
-  min-height: 60vh; /* opcional, solo para que no se vea tan chiquito */
+/* ===============================
+   Títulos estilo Flow
+   =============================== */
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--flow-text);
 }
 
 /* Si querés que el texto por defecto sea claro sobre fondos oscuros,
