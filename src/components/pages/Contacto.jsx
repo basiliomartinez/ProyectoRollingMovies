@@ -1,4 +1,4 @@
-import { Container, Form, Button, Row, Col, Card } from "react-bootstrap";
+import { Container, Form, Button, Row, Col, Card, Modal } from "react-bootstrap";
 import { useState } from "react";
 
 import "../../contacto.css";
@@ -22,10 +22,12 @@ const Contacto = () => {
     mensaje: "",
   });
 
+  const [showModal, setShowModal] = useState(false);
+
   const manejarSubmit = (e) => {
     e.preventDefault();
     console.log("Datos enviados:", formData);
-    alert("Tu mensaje fue enviado. ¡Gracias por contactarnos!");
+    setShowModal(true); // abre el modal
   };
 
   const manejarCambio = (e) => {
@@ -104,7 +106,7 @@ const Contacto = () => {
           </Card>
         </Col>
 
-        {/* INFORMACIÓN DE CONTACTO */}
+        {/* INFO DE CONTACTO */}
         <Col xs={12} md={4}>
           <Card className="shadow-sm p-3 card-info">
             <Card.Title className="text-center mb-3">
@@ -137,7 +139,7 @@ const Contacto = () => {
           </Card>
         </Col>
 
-        {/* MAPA  */}
+        {/* MAPA */}
         <Col xs={12}>
           <Card className="shadow-sm p-3 mt-4 card-mapa">
             <Card.Title className="text-center mb-3">
@@ -155,6 +157,21 @@ const Contacto = () => {
           </Card>
         </Col>
       </Row>
+
+      {/* MODAL  */}
+      <Modal show={showModal} onHide={() => setShowModal(false)}>
+        <Modal.Header closeButton>
+          <Modal.Title>Mensaje enviado</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          ¡Gracias por contactarnos! Te responderemos a la brevedad.
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="primary" onClick={() => setShowModal(false)}>
+            Cerrar
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </main>
   );
 };
