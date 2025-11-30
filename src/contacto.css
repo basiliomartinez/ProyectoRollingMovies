@@ -1,0 +1,55 @@
+/* ===============================
+Contactos css
+=============================== */
+
+.pagina-contacto {
+  min-height: 80vh;
+}
+
+.card-formulario,
+.card-info,
+.card-mapa {
+  border-radius: 12px;
+}
+
+.input-contacto {
+  border-radius: 10px;
+}
+
+.btn-enviar {
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.contenedor-mapa {
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.iframe-mapa {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.icono-red {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.icono-red:hover {
+  transform: scale(1.2);
+}
+
+.instagram {
+  color: #e4405f;
+}
+.facebook {
+  color: #1877f2;
+}
+.twitter-x{
+  color: #ffffff;
+}
