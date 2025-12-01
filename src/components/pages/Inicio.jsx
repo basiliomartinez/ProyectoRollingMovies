@@ -335,7 +335,7 @@ const peliculasComedia = [
 const Inicio = () => {
   return (
     <main className="container my-4">
-      {/* Película destacada dentro del container */}
+      {/* Película destacada*/}
       <section className="bg-dark text-light rounded-4 p-4 mb-4">
         <Row className="align-items-center">
           <Col md={6}>
@@ -371,7 +371,7 @@ const Inicio = () => {
         </Row>
       </section>
 
-      {/* Listas por categoría, también dentro del mismo container */}
+      {/*Categorías de peliculas*/}
       <section className="mb-4">
         <h1 className="tituloCategoria mb-3 text-center">
           <ins>Acción</ins>
