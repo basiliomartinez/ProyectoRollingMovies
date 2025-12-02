@@ -19,11 +19,18 @@ const Footer = () => {
             <Link to="/contacto">Contacto</Link>
           </Col>
 
-          <Col md={4} className="text-center social-icons">
-            <i className="bi bi-facebook"></i>
-            <i className="bi bi-instagram"></i>
-            <i className="bi bi-youtube"></i>
-          </Col>
+         <Col md={4} className="text-center social-icons">
+  <Link to="/redes/facebook">
+    <i className="bi bi-facebook"></i>
+  </Link>
+  <Link to="/redes/instagram">
+    <i className="bi bi-instagram"></i>
+  </Link>
+  <Link to="/redes/youtube">
+    <i className="bi bi-youtube"></i>
+  </Link>
+</Col>
+
           <button className="btn-top" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
   ↑ Volver arriba
 </button>
