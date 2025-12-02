@@ -13,10 +13,10 @@ const Login = ({ setUsuarioLogueado }) => {
   const navegacion = useNavigate();
 
   const onSubmit = (data) => {
-    const { email, password } = data;
+    console.log(data);
 
     // simulacion de autenticacion
-    if (email !== "" && password !== "") {
+    if (import.meta.env.VITE_EMAIL === data.email && import.meta.env.VITE_PASSWORD === data.password) {
       setUsuarioLogueado(true);
       Swal.fire({
         icon: "success",
