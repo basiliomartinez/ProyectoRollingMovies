@@ -11,7 +11,7 @@ body,
 
 /* Contenedor principal de la app */
 .app-wrapper {
-  min-height: 100vh;      /* ocupa al menos el alto de la pantalla */
+  min-height: 100vh; /* ocupa al menos el alto de la pantalla */
   display: flex;
   flex-direction: column; /* columna: header / main / footer */
 }
@@ -22,19 +22,18 @@ body,
   flex-direction: column;
 }
 
-
 /* ===============================
    Variables de color estilo Flow
    =============================== */
 :root {
   /* FONDOS */
-  --flow-bg: #050a0c;        /* fondo principal */
-  --flow-bg-alt: #111820;    /* fondo secundario */
+  --flow-bg: #050a0c; /* fondo principal */
+  --flow-bg-alt: #111820; /* fondo secundario */
 
   /* COLORES PRINCIPALES */
-  --flow-primary: #00e5a0;       /* verde Flow */
-  --flow-primary-soft: #00c48c;  /* hover suave */
-  --flow-cyan: #00b5e2;          /* celeste opcional */
+  --flow-primary: #00e5a0; /* verde Flow */
+  --flow-primary-soft: #00c48c; /* hover suave */
+  --flow-cyan: #00b5e2; /* celeste opcional */
 
   /* TEXTO */
   --flow-text: #ffffff;
@@ -81,7 +80,7 @@ body,
 
 /* Contenedor principal de la app */
 .app-wrapper {
-  min-height: 100vh;      /* ocupa al menos el alto de la pantalla */
+  min-height: 100vh; /* ocupa al menos el alto de la pantalla */
   display: flex;
   flex-direction: column; /* columna: header / main / footer */
 }
@@ -92,19 +91,18 @@ body,
   flex-direction: column;
 }
 
-
 /* ===============================
    Variables de color estilo Flow
    =============================== */
 :root {
   /* FONDOS */
-  --flow-bg: #050a0c;        /* fondo principal */
-  --flow-bg-alt: #111820;    /* fondo secundario */
+  --flow-bg: #050a0c; /* fondo principal */
+  --flow-bg-alt: #111820; /* fondo secundario */
 
   /* COLORES PRINCIPALES */
-  --flow-primary: #00e5a0;       /* verde Flow */
-  --flow-primary-soft: #00c48c;  /* hover suave */
-  --flow-cyan: #00b5e2;          /* celeste opcional */
+  --flow-primary: #00e5a0; /* verde Flow */
+  --flow-primary-soft: #00c48c; /* hover suave */
+  --flow-cyan: #00b5e2; /* celeste opcional */
 
   /* TEXTO */
   --flow-text: #ffffff;
@@ -235,21 +233,20 @@ footer a:hover {
 /*estilo de TRAILER de pelicula destacada con link de youtube
 autor: Gaston
 */
-.link-de-youtube{
-    width: 100%;
+.link-de-youtube {
+  width: 100%;
   height: 100%;
   display: block;
-  border:none;
+  border: none;
   border-radius: 5px;
 }
 
 /*estilo de titulos para seccion categorias
 autor: Gaston
 */
-.tituloCategoria{
+.tituloCategoria {
   color: #00e5a0;
 }
-
 
 /* --- PLANES ESTILO STREAMING --- */
 .planes-streaming .plan-card {
@@ -313,8 +310,8 @@ autor: Gaston
   border-radius: 0.75rem;
   overflow: hidden;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
-  transition: transform 0.2s ease, box-shadow 0.2s ease,
-    border-color 0.2s ease, filter 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease,
+    filter 0.2s ease;
 }
 
 /* Contenedor de la imagen con proporción "poster" */
@@ -371,4 +368,24 @@ autor: Gaston
   font-size: 0.8rem;
   padding-inline: 0.9rem;
   border-radius: 999px;
+}
+
+.tituloRegistro {
+  color: #00e5a0;
+}
+
+/* BOTÓN DE REGISTRO */
+.btn-registro {
+  display: inline-block;
+  padding: 10px, auto;
+  font-weight: bold;
+  background: #00e5a0;
+  color: #ffffff;
+  border-radius: 10px;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.btn-registro:hover {
+  background: #02b8819a;
+  transform: scale(1.05);
 }
