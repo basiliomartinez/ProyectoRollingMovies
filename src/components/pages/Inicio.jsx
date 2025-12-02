@@ -1,6 +1,7 @@
 import { Button, Col } from "react-bootstrap";
 import CardPelicula from "../services/CardPelicula";
 import Row from "react-bootstrap/Row";
+import { Link } from "react-router";
 
 const peliculasAccion = [
   {
@@ -335,7 +336,7 @@ const peliculasComedia = [
 const Inicio = () => {
   return (
     <main className="container my-4">
-      {/* Película destacada*/}
+      {/* PELÍCULA DESTACADA*/}
       <section className="bg-dark text-light rounded-4 p-4 mb-4">
         <Row className="align-items-center">
           <Col md={6}>
@@ -349,12 +350,17 @@ const Inicio = () => {
               </strong>
             </p>
             <div className="d-flex gap-3">
-              <Button variant="light">
-                <i className="bi bi-play-fill me-1"></i> Reproducir
-              </Button>
-              <Button variant="outline-light">
-                <i className="bi bi-info-circle me-1"></i> Más información
-              </Button>
+              <Link to="/Error404">
+                <Button variant="light">
+                  <i className="bi bi-play-fill me-1"></i> Reproducir
+                </Button>
+              </Link>
+
+              <Link to="/detalle/1">
+                <Button variant="outline-light">
+                  <i className="bi bi-info-circle me-1"></i>Más información
+                </Button>
+              </Link>
             </div>
           </Col>
           <Col md={6} className="d-none d-md-block">
@@ -371,7 +377,54 @@ const Inicio = () => {
         </Row>
       </section>
 
-      {/*Categorías de peliculas*/}
+
+      <section className="planes-streaming my-5">
+  <h1 className="text-center mb-5 tituloCategoria">
+    ¿Qué plan mensual vas a elegir?
+  </h1>
+
+  <div className="row g-4 justify-content-center">
+
+    {/* PLAN STANDARD */}
+    <div className="col-12 col-md-4">
+      <div className="plan-card plan-standard">
+        <h3>Standard</h3>
+        <h2 className="fw-bold mb-4">$4.999</h2>
+        <p>✔ Visualización en 1 pantalla</p>
+        <p>✔ Resolución HD (720p)</p>
+        <p>✔ Catálogo estándar</p>
+        <a href="/registro" className="btn-plan">Elegir plan</a>
+      </div>
+    </div>
+
+    {/* PLAN PREMIUM */}
+    <div className="col-12 col-md-4">
+      <div className="plan-card plan-premium">
+        <h3>Premium</h3>
+        <h2 className="fw-bold mb-4">$9.999</h2>
+        <p>✔ 2 pantallas simultáneas</p>
+        <p>✔ Resolución Full HD (1080p)</p>
+        <p>✔ Contenido exclusivo</p>
+        <a href="/registro" className="btn-plan">Elegir plan</a>
+      </div>
+    </div>
+
+    {/* PLAN GOLD */}
+    <div className="col-12 col-md-4">
+      <div className="plan-card plan-gold">
+        <h3>Gold</h3>
+        <h2 className="fw-bold mb-4">$14.999</h2>
+        <p>✔ 4 pantallas simultáneas</p>
+        <p>✔ Resolución 4K + HDR</p>
+        <p>✔ Todo el contenido desbloqueado</p>
+        <a href="/registro" className="btn-plan">Elegir plan</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+      {/*CATEGORIAS DE PELÍCULAS*/}
       <section className="mb-4">
         <h1 className="tituloCategoria mb-3 text-center">
           <ins>Acción</ins>
@@ -390,7 +443,6 @@ const Inicio = () => {
           ))}
         </Row>
       </section>
-
       <section className="mb-4">
         <h1 className="tituloCategoria mb-3 text-center">
           <ins>Ciencia Ficción</ins>

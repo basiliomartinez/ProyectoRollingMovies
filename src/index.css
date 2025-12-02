@@ -250,6 +250,56 @@ autor: Gaston
   color: #00e5a0;
 }
 
+
+/* --- PLANES ESTILO STREAMING --- */
+.planes-streaming .plan-card {
+  background: #111;
+  padding: 25px;
+  border-radius: 18px;
+  text-align: center;
+  color: #fff;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  cursor: pointer;
+  border: 1px solid #00e5a060;
+}
+
+.planes-streaming .plan-card:hover {
+  transform: scale(1.06);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.18);
+}
+
+/* BOTÓN DE PLANES */
+.btn-plan {
+  display: inline-block;
+  padding: 10px 25px;
+  font-weight: bold;
+  background: #000000;
+  color: #ffffff;
+  border-radius: 10px;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.btn-plan:hover {
+  background: #ffffff;
+  transform: scale(1.05);
+}
+
+/* DIFERENCIAS ENTRE PLANES */
+.plan-standard {
+  border-top: 5px solid #777;
+  box-shadow: 0 0 15px rgb(184, 184, 184);
+}
+
+.plan-premium {
+  border-top: 5px solid #2da0ff;
+  box-shadow: 0 0 15px rgb(30, 143, 255);
+}
+
+.plan-gold {
+  border-top: 4px solid gold;
+  box-shadow: 0 0 15px rgb(255, 217, 0);
+}
+
 /* ========================================
    ESTILOS ESPECÍFICOS PARA CardPelicula
    Autor: Basilio - NO BORRAR
