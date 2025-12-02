@@ -31,3 +31,11 @@
   transform: scale(1.2);
   color: #e50914;
 }
+.btn-top {
+  background: #0D0D0D;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 20px;
+  margin-top: 10px;
+}

@@ -24,6 +24,10 @@ const Footer = () => {
             <i className="bi bi-instagram"></i>
             <i className="bi bi-youtube"></i>
           </Col>
+          <button className="btn-top" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
+  ↑ Volver arriba
+</button>
+
         </Row>
       </Container>
     </footer>
