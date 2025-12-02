@@ -1,0 +1,64 @@
+.pagina-404 {
+  min-height: 100vh;
+  background: #0c0c0c;
+  color: white;
+  padding: 40px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efecto Glow en los colores Flow */
+.pagina-404::before {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: var(--flow-primary);
+  filter: blur(200px);
+  opacity: 0.2;
+  top: -100px;
+  left: -100px;
+}
+
+.pagina-404::after {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: var(--flow-cyan);
+  filter: blur(200px);
+  opacity: 0.15;
+  bottom: -100px;
+  right: -100px;
+}
+
+/* Número grande */
+.titulo-404 {
+  font-size: 8rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: var(--flow-primary);
+  text-shadow: 0 0 20px rgba(0, 229, 160, 0.6);
+}
+
+/* Texto */
+.descripcion-404 {
+  font-size: 1.3rem;
+  opacity: 0.8;
+  margin-bottom: 30px;
+}
+
+/* Botón */
+.btn-404 {
+  background-color: var(--flow-primary);
+  color: #000;
+  border: none;
+  font-weight: 600;
+  padding: 12px 25px;
+  border-radius: 10px;
+  transition: 0.2s ease;
+}
+
+.btn-404:hover {
+  background-color: var(--flow-primary-soft);
+}

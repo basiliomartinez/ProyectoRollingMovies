@@ -8,7 +8,7 @@ import {
   Modal,
 } from "react-bootstrap";
 import { useState } from "react";
-
+import { Link } from "react-router-dom";
 import "../../contacto.css";
 
 // Iconos
@@ -176,9 +176,15 @@ const Contacto = () => {
             <h5 className="text-center titulo-redes">Redes Sociales</h5>
 
             <div className="d-flex justify-content-center gap-3 fs-3 redes-contacto">
-              <BsInstagram className="icono-red instagram" />
-              <BsFacebook className="icono-red facebook" />
-              <BsTwitterX className="icono-red twitter-x" />
+              <Link to="/insta">
+                <BsInstagram className="icono-red instagram" />
+              </Link>
+              <Link to="/face">
+                <BsFacebook className="icono-red facebook" />
+              </Link>
+              <Link to="/twitter">
+                <BsTwitterX className="icono-red twitter-x" />
+              </Link>
             </div>
           </Card>
         </Col>
