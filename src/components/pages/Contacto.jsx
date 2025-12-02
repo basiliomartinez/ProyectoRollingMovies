@@ -41,7 +41,7 @@ const Contacto = () => {
     };
 
     setFormData(nuevo);
-  }; 
+  };
 
   // === Validación antes de enviar ===
   const validarFormulario = () => {
@@ -51,7 +51,7 @@ const Contacto = () => {
     if (formData.mensaje.trim().length < 5)
       return "El mensaje debe tener al menos 5 caracteres";
 
-    return null; 
+    return null;
   };
 
   const manejarSubmit = (e) => {
@@ -152,7 +152,7 @@ const Contacto = () => {
         </Col>
 
         {/* INFO */}
-        <Col xs={12} md={4}>
+        <Col xs={12} md={6} lg={4}>
           <Card className="shadow-sm p-3 card-info">
             <Card.Title className="text-center mb-3">
               Información de contacto
