@@ -1,0 +1,98 @@
+/* ===============================
+Contactos CSS
+=============================== */
+
+.pagina-contacto {
+  min-height: 80vh;
+  padding-bottom: 2rem;
+}
+
+/* --- Cards --- */
+.card-formulario,
+.card-info,
+.card-mapa {
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+/* --- Inputs --- */
+.grupo-contacto .form-control {
+  border-radius: 10px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.grupo-contacto .form-control:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 0.2rem rgba(13,110,253,0.25);
+}
+
+/* --- Botón enviar --- */
+.btn-enviar {
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 10px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.btn-enviar:hover {
+  transform: scale(1.02);
+  opacity: 0.9;
+}
+
+/* --- Datos de contacto --- */
+.dato-contacto {
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 5px 0;
+}
+
+/* --- Subtítulo redes sociales --- */
+.titulo-redes, .subtitulo-contacto {
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #00e5a0; 
+}
+
+/* --- Contenedor redes sociales --- */
+.redes-contacto {
+  gap: 1rem;
+}
+
+/* --- Iconos de redes --- */
+.icono-red {
+  cursor: pointer;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.icono-red:hover {
+  transform: scale(1.15);
+  opacity: 0.85;
+}
+
+/* Colores específicos de redes */
+.instagram {
+  color: #e4405f;
+}
+.facebook {
+  color: #1877f2;
+}
+.twitter-x {
+  color: #ffffff;
+}
+
+/* --- Mapa --- */
+.contenedor-mapa {
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.iframe-mapa {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
