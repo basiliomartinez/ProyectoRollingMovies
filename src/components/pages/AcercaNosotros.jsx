@@ -2,13 +2,13 @@ import { Container, Row, Col, Card } from "react-bootstrap";
 import "../../AcercaNosotros.css";
 
 const integrantes = [
-  { nombre: "Integrante 1", rol: "Rol en el proyecto", descripcion: "Breve descripción sobre su participación." },
-  { nombre: "Integrante 2", rol: "Rol en el proyecto", descripcion: "Breve descripción sobre su participación." },
-  { nombre: "Integrante 3", rol: "Rol en el proyecto", descripcion: "Breve descripción sobre su participación." },
-  { nombre: "Integrante 4", rol: "Rol en el proyecto", descripcion: "Breve descripción sobre su participación." },
-  { nombre: "Integrante 5", rol: "Rol en el proyecto", descripcion: "Breve descripción sobre su participación." },
-  { nombre: "Integrante 6", rol: "Rol en el proyecto", descripcion: "Breve descripción sobre su participación." },
-  { nombre: "Integrante 7", rol: "Rol en el proyecto", descripcion: "Breve descripción sobre su participación." }
+  { nombre: "Marcos Lautaro Molina", rol: "Rol en el proyecto", descripcion: "Breve descripción sobre su participación." },
+  { nombre: "Basilio Martinez", rol: "Rol en el proyecto", descripcion: "Breve descripción sobre su participación." },
+  { nombre: "Gonzalo Gaston Gomez", rol: "Rol en el proyecto", descripcion: "Breve descripción sobre su participación." },
+  { nombre: "Ezequiel Diaz", rol: "Rol en el proyecto", descripcion: "Breve descripción sobre su participación." },
+  { nombre: "Lizandro ", rol: "Rol en el proyecto", descripcion: "Breve descripción sobre su participación." },
+  { nombre: "Marcos Joaquin Gonzales", rol: "Rol en el proyecto", descripcion: "Breve descripción sobre su participación." },
+  { nombre: "Tomas Sobrino", rol: "Rol en el proyecto", descripcion: "Breve descripción sobre su participación." }
 ];
 
 const AcercaNosotros = () => {
@@ -24,7 +24,7 @@ const AcercaNosotros = () => {
       <Row className="g-4 justify-content-center">
         {integrantes.map((persona, index) => (
           <Col md={4} sm={6} key={index}>
-            <Card className="neon-card">
+            <Card className="neon-card h-100">
               <div className="neon-border"></div>
               <Card.Body>
                 <Card.Title>{persona.nombre}</Card.Title>
