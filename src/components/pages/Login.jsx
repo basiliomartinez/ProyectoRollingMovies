@@ -2,7 +2,6 @@ import { Form, Button, Card } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router";
 import Swal from "sweetalert2";
-import "./login.css";
 
 const Login = ({ setUsuarioLogueado }) => {
   const {
@@ -16,7 +15,10 @@ const Login = ({ setUsuarioLogueado }) => {
     console.log(data);
 
     // simulacion de autenticacion
-    if (import.meta.env.VITE_EMAIL === data.email && import.meta.env.VITE_PASSWORD === data.password) {
+    if (
+      import.meta.env.VITE_EMAIL === data.email &&
+      import.meta.env.VITE_PASSWORD === data.password
+    ) {
       setUsuarioLogueado(true);
       Swal.fire({
         icon: "success",
@@ -27,8 +29,8 @@ const Login = ({ setUsuarioLogueado }) => {
       });
       // guardamos sesion en el localStorage
       localStorage.setItem("usuarioLogueado", "true");
-      // redireccionamos al inicio
-      navegacion("/admin");
+      // redireccionamos al administrador
+      navegacion("/administrador");
     } else {
       Swal.fire({
         icon: "error",
@@ -38,16 +40,12 @@ const Login = ({ setUsuarioLogueado }) => {
     }
   };
 
-  const manejarSubmit = (e) => {
-    e.preventDefault();
-  };
-
   return (
     <main className="d-flex justify-content-center align-items-center login-bg">
       <Card className="login-card p-4">
         <h2 className="text-center mb-4 fw-bold">Iniciar Sesión</h2>
 
-        <Form onSubmit={handleSubmit(onSubmit) || manejarSubmit}>
+        <Form onSubmit={handleSubmit(onSubmit)}>
           {/* EMAIL */}
           <Form.Group className="mb-3" controlId="loginEmail">
             <Form.Label className="fw-semibold">Email o usuario</Form.Label>
@@ -73,7 +71,7 @@ const Login = ({ setUsuarioLogueado }) => {
             <Form.Label className="fw-semibold">Contraseña</Form.Label>
             <Form.Control
               type="password"
-              placeholder="********"
+              placeholder="****"
               className="input-estilizado"
               {...register("password", {
                 required: "La contraseña es obligatoria",
