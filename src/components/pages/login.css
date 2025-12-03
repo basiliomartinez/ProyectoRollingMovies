@@ -1,7 +1,7 @@
 /* Fondo general */
 .login-bg {
   min-height: 100vh;
-  background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+  /* background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460); */
   padding: 20px;
 }
 
@@ -9,11 +9,11 @@
 .login-card {
   width: 100%;
   max-width: 420px;
-  background: #ffffffdd;
+  /* background: #ffffffdd; */
   border: none;
   border-radius: 18px;
   backdrop-filter: blur(8px);
-  box-shadow: 0px 10px 35px rgba(0, 0, 0, 0.35);
+  box-shadow: 0px 10px 35px rgba(13, 87, 6, 0.438);
   animation: fadeIn 0.6s ease-in-out;
 }
 
@@ -32,7 +32,7 @@
 
 /* Botón Login */
 .btn-login {
-  background-color: #4e8cff;
+  background-color: #08dd59;
   border: none;
   padding: 12px;
   border-radius: 10px;
@@ -42,14 +42,14 @@
 }
 
 .btn-login:hover {
-  background-color: #2a6be9;
+  background-color: #11a82a;
   transform: translateY(-2px);
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
 }
 
 /* Link olvide contraseña */
 .link-olvide {
-  color: #0f3460 !important;
+  color: #0071fc !important;
   font-weight: 500;
   transition: all 0.3s ease;
 }

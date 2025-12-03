@@ -28,7 +28,7 @@ const Login = ({ setUsuarioLogueado }) => {
       // guardamos sesion en el localStorage
       localStorage.setItem("usuarioLogueado", "true");
       // redireccionamos al inicio
-      navegacion("/");
+      navegacion("/admin");
     } else {
       Swal.fire({
         icon: "error",
