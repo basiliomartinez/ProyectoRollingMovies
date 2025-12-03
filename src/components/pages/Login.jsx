@@ -1,7 +1,8 @@
-import { Container, Form, Button } from "react-bootstrap";
+import { Form, Button, Card } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router";
 import Swal from "sweetalert2";
+import "../../login.css";
 
 const Login = ({ setUsuarioLogueado }) => {
   const {
@@ -12,10 +13,13 @@ const Login = ({ setUsuarioLogueado }) => {
   const navegacion = useNavigate();
 
   const onSubmit = (data) => {
-    const { email, password } = data;
+    console.log(data);
 
     // simulacion de autenticacion
-    if (email === "" && password === "") {
+    if (
+      import.meta.env.VITE_EMAIL === data.email &&
+      import.meta.env.VITE_PASSWORD === data.password
+    ) {
       setUsuarioLogueado(true);
       Swal.fire({
         icon: "success",
@@ -26,8 +30,8 @@ const Login = ({ setUsuarioLogueado }) => {
       });
       // guardamos sesion en el localStorage
       localStorage.setItem("usuarioLogueado", "true");
-      // redireccionamos al inicio
-      navegacion("/");
+      // redireccionamos al administrador
+      navegacion("/administrador");
     } else {
       Swal.fire({
         icon: "error",
@@ -37,52 +41,63 @@ const Login = ({ setUsuarioLogueado }) => {
     }
   };
 
-  const manejarSubmit = (e) => {
-    e.preventDefault(); // solo para que no recargue la página en el maquetado
-  };
-
   return (
-    <main className="container my-4">
-      <h1 className="mb-4">Login</h1>
-      <Container className="col-12 col-md-6">
-        <Form onSubmit={handleSubmit(onSubmit) || manejarSubmit}>
+    <main className="d-flex justify-content-center align-items-center login-bg">
+      <Card className="login-card p-4">
+        <h2 className="text-center mb-4 fw-bold">Iniciar Sesión</h2>
+
+        <Form onSubmit={handleSubmit(onSubmit)}>
+          {/* EMAIL */}
           <Form.Group className="mb-3" controlId="loginEmail">
-            <Form.Label>Email</Form.Label>
-            <Form.Control type="email" placeholder="ejemplo@correo.com" {...register("email",{
-              required: "El email es un dato obligatorio",
-              pattern: {
-                value:
-                  /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/,
-                message:
-                  "El email debe cumplir con el siguiente formato correo@dominio.extension",
-              }
-            })}/>
-            <Form.Text className="text-danger">{errors.email?.message}</Form.Text>
+            <Form.Label className="fw-semibold">Email o usuario</Form.Label>
+            <Form.Control
+              type="email"
+              placeholder="ejemplo@correo.com"
+              className="input-estilizado"
+              {...register("email", {
+                required: "El email es obligatorio",
+                pattern: {
+                  value: /\S+@\S+\.\S+/,
+                  message: "Formato de email inválido",
+                },
+              })}
+            />
+            {errors.email && (
+              <small className="text-danger">{errors.email.message}</small>
+            )}
           </Form.Group>
 
+          {/* PASSWORD */}
           <Form.Group className="mb-3" controlId="loginPassword">
-            <Form.Label>Contraseña</Form.Label>
-            <Form.Control type="password" placeholder="********" {...register("password", {
-              required: "La contraseña es un dato obligatorio",
-              minLength: {
-                value: 6,
-                message: "La contraseña debe tener al menos 6 caracteres",
-              },
-            })}/>
-            <Form.Text className="text-danger">{errors.password?.message}</Form.Text>
+            <Form.Label className="fw-semibold">Contraseña</Form.Label>
+            <Form.Control
+              type="password"
+              placeholder="****"
+              className="input-estilizado"
+              {...register("password", {
+                required: "La contraseña es obligatoria",
+                minLength: {
+                  value: 4,
+                  message: "Debe tener al menos 4 caracteres",
+                },
+              })}
+            />
+            {errors.password && (
+              <small className="text-danger">{errors.password.message}</small>
+            )}
           </Form.Group>
 
-          <div className="mb-3">
-            <Button variant="link" className="p-0">
+          <div className="mb-3 text-end">
+            <Button variant="link" className="p-0 link-olvide">
               ¿Olvidaste tu contraseña?
             </Button>
           </div>
 
-          <Button variant="primary" type="submit">
+          <Button className="btn-login w-100 mt-2" type="submit">
             Ingresar
           </Button>
         </Form>
-      </Container>
+      </Card>
     </main>
   );
 };
