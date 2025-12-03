@@ -17,7 +17,13 @@ import ProtectorRutas from "./components/routes/ProtectorRutas";
 const App = () => {
   // Estado global simple para la sesión del usuario
   // Por defecto: NO está logueado
-  const [usuarioLogueado, setUsuarioLogueado] = useState(false);
+  const [usuarioLogueado, setUsuarioLogueado] = useState(
+  localStorage.getItem("usuarioLogueado") === "true"
+);
+
+useEffect(() => {
+  localStorage.setItem("usuarioLogueado", usuarioLogueado.toString());
+}, [usuarioLogueado]);
 
   return (
     <BrowserRouter>

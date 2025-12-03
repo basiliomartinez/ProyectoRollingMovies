@@ -1,6 +1,6 @@
 import { Container, Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const Login = ({ setUsuarioLogueado }) => {
@@ -15,7 +15,7 @@ const Login = ({ setUsuarioLogueado }) => {
     const { email, password } = data;
 
     // simulacion de autenticacion
-    if (email === "" && password === "") {
+    if (email === "admin@rolling.com" && password === "123456"){
       setUsuarioLogueado(true);
       Swal.fire({
         icon: "success",
@@ -48,28 +48,40 @@ const Login = ({ setUsuarioLogueado }) => {
         <Form onSubmit={handleSubmit(onSubmit) || manejarSubmit}>
           <Form.Group className="mb-3" controlId="loginEmail">
             <Form.Label>Email</Form.Label>
-            <Form.Control type="email" placeholder="ejemplo@correo.com" {...register("email",{
-              required: "El email es un dato obligatorio",
-              pattern: {
-                value:
-                  /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/,
-                message:
-                  "El email debe cumplir con el siguiente formato correo@dominio.extension",
-              }
-            })}/>
-            <Form.Text className="text-danger">{errors.email?.message}</Form.Text>
+<Form.Control
+              type="email"
+              placeholder="ejemplo@correo.com"
+              {...register("email", {
+                required: "El email es un dato obligatorio",
+                pattern: {
+                  value:
+                    /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/,
+                  message:
+                    "El email debe cumplir con el formato correo@dominio.com",
+                },
+              })}
+            />
+            <Form.Text className="text-danger">
+              {errors.email?.message}
+            </Form.Text>
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="loginPassword">
             <Form.Label>Contraseña</Form.Label>
-            <Form.Control type="password" placeholder="********" {...register("password", {
-              required: "La contraseña es un dato obligatorio",
-              minLength: {
-                value: 6,
-                message: "La contraseña debe tener al menos 6 caracteres",
-              },
-            })}/>
-            <Form.Text className="text-danger">{errors.password?.message}</Form.Text>
+              <Form.Control
+              type="password"
+              placeholder="********"
+              {...register("password", {
+                required: "La contraseña es un dato obligatorio",
+                minLength: {
+                  value: 6,
+                  message: "La contraseña debe tener al menos 6 caracteres",
+                },
+              })}
+            />
+            <Form.Text className="text-danger">
+              {errors.password?.message}
+            </Form.Text>
           </Form.Group>
 
           <div className="mb-3">

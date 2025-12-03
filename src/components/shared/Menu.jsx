@@ -1,7 +1,17 @@
-import { Navbar, Container, Nav } from "react-bootstrap";
-import { NavLink } from "react-router";
+import { Navbar, Container, Nav, Button } from "react-bootstrap";
+import { NavLink, useNavigate } from "react-router-dom";
 
-const Menu = () => {
+const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
+  const navigate = useNavigate();
+
+const handleLogout = () => {
+  setUsuarioLogueado(false);
+  localStorage.removeItem("usuarioLogueado"); // borra la sesión del almacenamiento local
+  navigate('/');
+};
+  const handleLogin = () => {
+    navigate('/login');
+  };
   return (
     <Navbar expand="lg" bg="dark" data-bs-theme="dark">
       <Container>
@@ -30,6 +40,18 @@ const Menu = () => {
             <NavLink className="nav-link" to="/administrador">
               Admin
             </NavLink>
+               {usuarioLogueado ? (
+              <>
+                <span className="navbar-text text-white me-2">Administrador</span>
+                <Button variant="outline-danger" size="sm" onClick={handleLogout}>
+                  Logout
+                </Button>
+              </>
+            ) : (
+              <Button variant="outline-light" size="sm" onClick={handleLogin}>
+                Login
+              </Button>
+            )}
           </Nav>
         </Navbar.Collapse>
       </Container>

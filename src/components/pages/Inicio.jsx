@@ -356,11 +356,11 @@ const Inicio = () => {
                 </Button>
               </Link>
 
-              <Link to="/detalle/1">
-                <Button variant="outline-light">
-                  <i className="bi bi-info-circle me-1"></i>Más información
-                </Button>
-              </Link>
+<Link to={`/detalle/${peli.id}`}>
+  <Button variant="outline-light">
+    <i className="bi bi-info-circle me-1"></i> Más información
+  </Button>
+</Link>
             </div>
           </Col>
           <Col md={6} className="d-none d-md-block">
