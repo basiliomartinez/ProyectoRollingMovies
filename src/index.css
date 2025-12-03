@@ -1,58 +1,4 @@
 /* ===============================
-   Layout general para footer abajo
-   =============================== */
-
-/* Que la app pueda medir el 100% de alto */
-html,
-body,
-#root {
-  height: 100%;
-}
-
-/* Contenedor principal de la app */
-.app-wrapper {
-  min-height: 100vh; /* ocupa al menos el alto de la pantalla */
-  display: flex;
-  flex-direction: column; /* columna: header / main / footer */
-}
-
-.app-main {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-/* ===============================
-   Variables de color estilo Flow
-   =============================== */
-:root {
-  /* FONDOS */
-  --flow-bg: #050a0c; /* fondo principal */
-  --flow-bg-alt: #111820; /* fondo secundario */
-
-  /* COLORES PRINCIPALES */
-  --flow-primary: #00e5a0; /* verde Flow */
-  --flow-primary-soft: #00c48c; /* hover suave */
-  --flow-cyan: #00b5e2; /* celeste opcional */
-
-  /* TEXTO */
-  --flow-text: #ffffff;
-  --flow-text-muted: #b0b8c1;
-}
-
-/* ===============================
-   Estilos globales
-   =============================== */
-body {
-  font-family: "Nunito", system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", sans-serif;
-  background-color: var(--flow-bg);
-  color: var(--flow-text);
-  margin: 0;
-  padding: 0;
-}
-
-/* ===============================
    Títulos estilo Flow
    =============================== */
 h1,
@@ -96,17 +42,17 @@ body,
    =============================== */
 :root {
   /* FONDOS */
-  --flow-bg: #050a0c; /* fondo principal */
-  --flow-bg-alt: #111820; /* fondo secundario */
+  --flow-bg: #050a0c !important; /* fondo principal */
+  --flow-bg-alt: #111820 !important; /* fondo secundario */
 
   /* COLORES PRINCIPALES */
-  --flow-primary: #00e5a0; /* verde Flow */
-  --flow-primary-soft: #00c48c; /* hover suave */
-  --flow-cyan: #00b5e2; /* celeste opcional */
+  --flow-primary: #00e5a0 !important; /* verde Flow */
+  --flow-primary-soft: #00c48c !important; /* hover suave */
+  --flow-cyan: #00b5e2 !important; /* celeste opcional */
 
   /* TEXTO */
-  --flow-text: #ffffff;
-  --flow-text-muted: #b0b8c1;
+  --flow-text: #ffffff !important;
+  --flow-text-muted: #b0b8c1 !important;
 }
 
 /* ===============================
@@ -216,11 +162,11 @@ a:hover {
    Footer estilo Flow
    =============================== */
 footer {
-  background-color: #000;
+  background-color: #000 ;
   color: var(--flow-text-muted);
   padding: 20px 0;
   text-align: center;
-  border-top: 1px solid #0f171e;
+  border-top: 1px solid #00c48c !important;
 }
 
 footer a {
@@ -389,3 +335,5 @@ autor: Gaston
   background: #02b8819a;
   transform: scale(1.05);
 }
+
+
