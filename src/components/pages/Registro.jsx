@@ -8,6 +8,7 @@ const Registro = () => {
     nombre: "",
     email: "",
     password: "",
+    confirmPassword: "",
   });
 
   const [error, setError] = useState("");
@@ -35,7 +36,12 @@ const Registro = () => {
       return;
     }
 
-    // Guardar usuario en localStorage
+     if (formData.password !== formData.confirmPassword) {
+    setError("Las contraseñas NO coinciden.");
+    return;
+  }
+
+    //Guardar usuario en localStorage
     const usuarioNuevo = {
       nombre: formData.nombre,
       email: formData.email,
@@ -44,70 +50,85 @@ const Registro = () => {
 
     localStorage.setItem("usuarioRegistrado", JSON.stringify(usuarioNuevo));
 
-    // Limpiar error
+    //Limpiar error
     setError("");
 
-    // dirigir a login
+    //dirigir a login
     navigate("/login");
   };
 
   return (
-  <div className="container d-flex justify-content-center align-items-center py-5">
-    <div className="w-100" style={{ maxWidth: "550px"}}>
-      <h2 className="text-center mb-4 tituloRegistro">Crear Cuenta</h2>
+    <div className="container d-flex justify-content-center align-items-center py-5">
+      <div className="w-100" style={{ maxWidth: "550px" }}>
+        <h2 className="text-center mb-4 tituloRegistro">Crear Cuenta</h2>
 
-      <form onSubmit={handleSubmit} className="bg-dark card p-4 shadow-sm border-0">
-        {error && <p className="alert alert-danger">{error}</p>}
+        <form
+          onSubmit={handleSubmit}
+          className="bg-dark card p-4 shadow-sm border-0"
+        >
+          {error && <p className="alert alert-danger">{error}</p>}
 
-        {/* Nombre */}
-        <div className="mb-3">
-          <label className="form-label">Nombre</label>
-          <input
-            type="text"
-            name="nombre"
-            className="form-control"
-            placeholder="Juan Rodríguez"
-            value={formData.nombre}
-            onChange={handleChange}
-            required
-          />
-        </div>
+          {/*Nombre*/}
+          <div className="mb-3">
+            <label className="form-label">Nombre</label>
+            <input
+              type="text"
+              name="nombre"
+              className="form-control"
+              placeholder="Ejemplo: Juan Rodríguez"
+              value={formData.nombre}
+              onChange={handleChange}
+              required
+            />
+          </div>
 
-        {/* Email */}
-        <div className="mb-3">
-          <label className="form-label">Correo Electrónico</label>
-          <input
-            type="email"
-            name="email"
-            className="form-control"
-            placeholder="Name@example.com"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-        </div>
+          {/*Email*/}
+          <div className="mb-3">
+            <label className="form-label">Correo Electrónico</label>
+            <input
+              type="email"
+              name="email"
+              className="form-control"
+              placeholder="Nombre@ejemplo.com"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+          </div>
 
-        {/* Password */}
-        <div className="mb-3">
-          <label className="form-label">Contraseña</label>
-          <input
-            type="password"
-            name="password"
-            className="form-control"
-            placeholder="*****"
-            value={formData.password}
-            onChange={handleChange}
-            required
-          />
-        </div>
+          {/*Contraseña*/}
+          <div className="mb-3">
+            <label className="form-label">Contraseña</label>
+            <input
+              type="password"
+              name="password"
+              className="form-control"
+              placeholder="******"
+              value={formData.password}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="mb-3">
+            <label className="form-label">Repetir la contraseña</label>
+            <input
+              type="password"
+              name="confirmPassword"
+              className="form-control"
+              placeholder="******"
+              value={formData.confirmPassword}
+              onChange={handleChange}
+              required
+            />
+          </div>
 
-        <button type="submit" className="mt-3 btn btn-registro w-100 py-2">
-          Registrarme
-        </button>
-      </form>
+          <button type="submit" className="mt-3 btn btn-registro w-100 py-2">
+            Registrarme
+          </button>
+        </form>
+      </div>
     </div>
-  </div>
-);
- };
+  );
+};
 
 export default Registro;
