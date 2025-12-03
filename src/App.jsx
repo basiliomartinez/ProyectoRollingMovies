@@ -15,8 +15,7 @@ import Footer from "./components/shared/Footer";
 import ProtectorRutas from "./components/routes/ProtectorRutas";
 
 const App = () => {
-  // Estado global simple para la sesión del usuario
-  // Por defecto: NO está logueado
+
   const [usuarioLogueado, setUsuarioLogueado] = useState(
   localStorage.getItem("usuarioLogueado") === "true"
 );
@@ -25,7 +24,7 @@ useEffect(() => {
   localStorage.setItem("usuarioLogueado", usuarioLogueado.toString());
 }, [usuarioLogueado]);
 
-  // ⬇️ APLICAR LA CLASE DEL TEMA A <html>
+  
   useEffect(() => {
     document.documentElement.classList.add("admin-theme");
 
