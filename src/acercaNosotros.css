@@ -1,0 +1,97 @@
+/* ===== ESTILO GENERAL ===== */
+body {
+  background: #0a0a0f;
+  color: #e5e5e5;
+  font-family: "Orbitron", sans-serif;
+}
+
+/* Texto principal estilo neón */
+.neon-title {
+  font-size: 2.5rem;
+  color: #0ff;
+  text-shadow: 0 0 10px #0ff, 0 0 25px #00d9ff, 0 0 40px #00aaff;
+  animation: neonPulse 2.5s infinite alternate ease-in-out;
+}
+
+.neon-subtext {
+  color: #7cefff;
+  text-shadow: 0 0 8px rgba(0,255,255,0.3);
+}
+
+.neon-strong {
+  color: #0ff;
+  text-shadow: 0 0 10px #0ff;
+}
+
+/* ===== TARJETAS NEÓN ===== */
+
+.neon-card {
+  position: relative;
+  background: rgba(10, 10, 30, 0.75);
+  border-radius: 15px;
+  padding: 1.5rem;
+  color: #e5e5e5;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 8px rgba(0,255,255,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+/* Borde neon animado */
+.neon-border {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px;
+  background: linear-gradient(90deg, #0ff, #00f6ff, #008cff, #0ff);
+  background-size: 300% 300%;
+  animation: neonFlow 5s linear infinite;
+  z-index: -1;
+}
+
+.neon-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: rgba(0, 255, 255, 0.08);
+  z-index: -2;
+}
+
+/* Hover con efecto glow */
+.neon-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 
+    0 0 20px #0ff,
+    0 0 35px rgba(0,255,255,0.6),
+    0 0 50px rgba(0,255,255,0.4);
+}
+
+/* ===== TIPOGRAFÍA De TARJETA ===== */
+
+.neon-card .card-title {
+  color: #0ff;
+  font-size: 1.4rem;
+  text-shadow: 0 0 8px #0ff;
+}
+
+.neon-card .card-subtitle {
+  color: #9defff;
+}
+
+.neon-card .card-text {
+  color: #d0faff;
+}
+
+/* ===== ANIMACIONES ===== */
+
+@keyframes neonFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes neonPulse {
+  from { text-shadow: 0 0 10px #0ff, 0 0 25px #00d9ff; }
+  to   { text-shadow: 0 0 25px #00f6ff, 0 0 45px #00aaff; }
+}
