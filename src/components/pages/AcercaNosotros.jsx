@@ -1,5 +1,5 @@
 import { Container, Row, Col, Card } from "react-bootstrap";
-import "./AcercaNosotros.css";
+import "../../AcercaNosotros.css";
 
 const integrantes = [
   { nombre: "Integrante 1", rol: "Rol en el proyecto", descripcion: "Breve descripción sobre su participación." },
