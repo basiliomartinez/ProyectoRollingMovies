@@ -20,14 +20,23 @@ const Footer = () => {
           </Col>
 
           <Col md={4} className="text-center social-icons">
-            <i className="bi bi-facebook"></i>
-            <i className="bi bi-instagram"></i>
-            <i className="bi bi-youtube"></i>
+            <Link to="/Error404" className="me-3 footer-social-link">
+              <i className="bi bi-facebook"></i>
+            </Link>
+            <Link to="/Error404" className="me-3 footer-social-link">
+              <i className="bi bi-instagram"></i>
+            </Link>
+            <Link to="/Error404" className="footer-social-link">
+              <i className="bi bi-youtube"></i>
+            </Link>
           </Col>
-          <button className="btn-top" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
-  ↑ Volver arriba
-</button>
 
+          <button
+            className="btn-top"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          >
+            ↑ Volver arriba
+          </button>
         </Row>
       </Container>
     </footer>
