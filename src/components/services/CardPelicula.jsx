@@ -1,5 +1,4 @@
 // src/components/services/CardPelicula.jsx
-
 import { Card, Button, Col, Badge } from "react-bootstrap";
 import { NavLink } from "react-router";
 
@@ -16,17 +15,16 @@ const CardPelicula = ({
       ? descripcion.slice(0, 120) + "..."
       : descripcion;
 
+  const imagenFallback =
+    "https://dummyimage.com/500x750/0a0a0a/ffffff&text=Sin+imagen";
+
   return (
     <Col>
       <Card className="h-100 card-pelicula">
         <div className="card-pelicula-img-wrapper">
           <Card.Img
             variant="top"
-        src={
-  imagen ||
-  "https://dummyimage.com/500x750/0a0a0a/ffffff&text=Sin+Imagen"
-}
-
+            src={imagen || imagenFallback}
             alt={nombre}
             className="card-pelicula-img"
           />
@@ -56,6 +54,16 @@ const CardPelicula = ({
           <Button
             as={NavLink}
             to={`/detalle/${codigo}`}
+            state={{
+              pelicula: {
+                codigo,
+                nombre,
+                categoria,
+                descripcion,
+                imagen,
+                publicado,
+              },
+            }}
             variant="outline-light"
             size="sm"
             className="card-pelicula-button"
