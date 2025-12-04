@@ -3,6 +3,20 @@ import CardPelicula from "../services/CardPelicula";
 import Row from "react-bootstrap/Row";
 import { Link } from "react-router";
 
+const peliculaDestacada = {
+  codigo: "f1",
+  nombre: "F1 LA PELÍCULA",
+  categoria: "Acción / Deportes",
+  descripcion:
+    "Sonny Hayes, ex promesa de la Fórmula 1, vuelve a las pistas décadas después para guiar a un joven piloto en medio de rivalidades, presión mediática y secretos del pasado.",
+  descripcionLarga:
+    "Sonny Hayes era el fenómeno más prometedor de la Fórmula 1 en los años 90, hasta que un accidente brutal cambió su carrera para siempre. Años más tarde, retirado y alejado de los circuitos, es contactado por su antiguo compañero de equipo, Ruben Cervantes, que ahora dirige una escudería en crisis. Desesperado por recuperar prestigio, Ruben le propone a Sonny volver como piloto y mentor del novato Joshua Pearce, un talento increíble pero inestable. Mientras el equipo lucha por sobrevivir en el campeonato, Sonny tendrá que enfrentarse a sus miedos, a la prensa, a sus errores del pasado y a una última oportunidad de gloria.",
+  imagen:
+    "https://image.tmdb.org/t/p/w500/5i6S7lTGQbCd4VjP5aYpKgNSsX.jpg", // poné el poster que quieran
+  publicado: true,
+};
+
+
 const peliculasAccion = [
   {
     id: 1,
@@ -356,11 +370,15 @@ const Inicio = () => {
                 </Button>
               </Link>
 
-              <Link to="/detalle/1">
-                <Button variant="outline-light">
-                  <i className="bi bi-info-circle me-1"></i>Más información
-                </Button>
-              </Link>
+             <Link
+  to={`/detalle/${peliculaDestacada.codigo}`}
+  state={{ pelicula: peliculaDestacada }}
+>
+  <Button variant="outline-light">
+    <i className="bi bi-info-circle me-1"></i>Más información
+  </Button>
+</Link>
+
             </div>
           </Col>
           <Col md={6} className="d-none d-md-block">
