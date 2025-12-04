@@ -204,6 +204,10 @@ autor: Gaston
   transition: transform 0.35s ease, box-shadow 0.35s ease;
   cursor: pointer;
   border: 1px solid #00e5a060;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .planes-streaming .plan-card:hover {
@@ -239,7 +243,7 @@ autor: Gaston
 }
 
 .plan-gold {
-  border-top: 4px solid gold;
+  border-top: 5px solid gold;
   box-shadow: 0 0 15px rgb(255, 217, 0);
 }
 
