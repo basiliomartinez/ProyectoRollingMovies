@@ -1,0 +1,134 @@
+/* ========================================= */
+/*               PALETA FLOW                 */
+/* ========================================= */
+
+:root {
+  --flow-bg: #050a0c;
+  --flow-bg-alt: #111820;
+
+  /* COLORES PRINCIPALES */
+  --flow-primary: #00e5a0;
+  --flow-primary-soft: #00c48c;
+  --flow-cyan: #00b5e2;
+
+  /* TEXTO */
+  --flow-text: #ffffff;
+  --flow-text-muted: #b0b8c1;
+}
+
+/* ===== GENERAL ===== */
+
+body {
+  background: var(--flow-bg);
+  color: var(--flow-text);
+  font-family: "Orbitron", sans-serif;
+}
+
+/* Título neón suave */
+.neon-title {
+  font-size: 2.5rem;
+  color: var(--flow-primary);
+  text-shadow: 
+    0 0 6px var(--flow-primary),
+    0 0 14px var(--flow-primary-soft);
+  animation: titlePulse 4s ease-in-out infinite alternate;
+}
+
+.neon-subtext {
+  color: var(--flow-text-muted);
+}
+
+.neon-strong {
+  color: var(--flow-primary);
+  text-shadow: 0 0 6px var(--flow-primary);
+}
+
+/* ========================================= */
+/*              TARJETAS NEÓN                */
+/* ========================================= */
+
+.neon-card {
+  position: relative;
+  background: var(--flow-bg-alt);
+  border-radius: 16px;
+  padding: 1.5rem;
+  color: var(--flow-text);
+  overflow: hidden;
+  border: 1px solid rgba(0, 229, 160, 0.25);
+  transition: 
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    background 0.45s ease;
+  box-shadow: 0 0 12px rgba(0, 229, 160, 0.15);
+}
+
+/* Borde neon con animación suave */
+.neon-border {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px;
+  background: linear-gradient(
+    120deg,
+    var(--flow-primary),
+    var(--flow-cyan),
+    var(--flow-primary),
+    var(--flow-primary-soft)
+  );
+  background-size: 350% 350%;
+  animation: borderFlow 12s ease-in-out infinite;
+  opacity: 0.75;
+  z-index: -1;
+}
+
+/* Hover NEÓN suave */
+.neon-card:hover {
+  transform: translateY(-6px) scale(1.025);
+  background: #131d26;
+  box-shadow:
+    0 0 16px rgba(0, 229, 160, 0.25),
+    0 0 28px rgba(0, 229, 160, 0.18);
+}
+
+/* Tipografía */
+.neon-card .card-title {
+  color: var(--flow-primary);
+  text-shadow: 0 0 6px var(--flow-primary);
+  font-size: 1.4rem;
+  transition: 0.4s ease;
+}
+
+.neon-card:hover .card-title {
+  text-shadow: 0 0 12px var(--flow-primary);
+}
+
+.neon-card .card-subtitle {
+  color: var(--flow-cyan);
+}
+
+.neon-card .card-text {
+  color: var(--flow-text-muted);
+}
+
+/* ========================================= */
+/*              ANIMACIONES SUAVES           */
+/* ========================================= */
+
+@keyframes borderFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes titlePulse {
+  0% {
+    text-shadow:
+      0 0 6px var(--flow-primary),
+      0 0 14px var(--flow-primary-soft);
+  }
+  100% {
+    text-shadow:
+      0 0 10px var(--flow-primary),
+      0 0 22px var(--flow-primary-soft);
+  }
+}
