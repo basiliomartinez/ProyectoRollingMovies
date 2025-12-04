@@ -1,0 +1,66 @@
+:root.admin-theme {
+  --flow-primary: #0A58FF;
+  --flow-primary-dark: #051735;
+  --flow-primary-light: #4DA1FF;
+  --flow-gray: #6C757D;
+  --flow-gray-light: #E9ECEF;
+  --flow-aqua: #21DBAA;
+  --flow-white: #FFFFFF;
+}
+
+
+body {
+  background-color: var(--flow-primary-dark);
+  color: var(--flow-aqua);
+}
+
+
+.card,
+.table-container,
+.content-box {
+  background: #0d1b33;
+  border-radius: 12px;
+  padding: 20px;
+  color: var(--flow-aqua);
+}
+
+
+input, select, textarea {
+  background: #0f223f;
+  border: 1px solid var(--flow-gray-light);
+  color: var(--flow-aqua);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--flow-gray);
+}
+
+
+button.primary,
+.btn-primary {
+  background: var(--flow-aqua);
+  color: white;
+  border: none;
+}
+
+button.primary:hover,
+.btn-primary:hover {
+  background: var(--flow-primary-dark);
+  color: var(--flow-aqua);
+}
+
+
+.badge-success {
+  background: var(--flow-primary-dark);
+  color: var(--flow-aqua);
+}
+
+
+.icon-btn {
+  color: var(--flow-white);
+}
+
+.icon-btn.delete {
+  color: #dc3545;
+}
