@@ -23,10 +23,6 @@ import MovieFormModal from "./MovieFormModal";
 
 import "../../admin.css";
 
-import Menu from "../shared/Menu";
-
-import Footer from "../shared/Footer";
-
 
 const STORAGE_KEY = "admin_movies_data";
 
@@ -383,7 +379,6 @@ export default function AdminPanel() {
 
   return (
     <>
-      <Menu />
 
       <div className="admin-header mt-2">
         <Container>
@@ -557,7 +552,6 @@ export default function AdminPanel() {
           </Card.Body>
         </Card>
       </Container>
-            <Footer></Footer>
       <MovieFormModal
         show={showModal}
         movie={currentMovie}
