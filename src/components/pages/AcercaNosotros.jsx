@@ -2,13 +2,13 @@ import { Container, Row, Col, Card } from "react-bootstrap";
 import "../../AcercaNosotros.css";
 
 const integrantes = [
-  { nombre: "Marcos Lautaro Molina", rol: "Frontend", descripcion: "Encargado de hacer el emaquetado y la logica del Login y el Sobre Nosotros." },
-  { nombre: "Basilio Martinez", rol: "Frontend", descripcion: "Encargado de el emaquetado y logica de las Cards Pelicula y Procter de Ruta ." },
-  { nombre: "Gonzalo Gaston Gomez", rol: "Frontend", descripcion: "Encargado del emaquetado y logica del Registro y de la pagina de Inicio." },
-  { nombre: "Ezequiel Diaz", rol: "Frontend", descripcion: "Encargado de hacer el emaquetado y logica del Error404 y el Contacto." },
-  { nombre: "Lisandro Araoz ", rol: "Frontend", descripcion: "Encargado de hacer el emaquetado y la logica del Admin Peliculas." },
-  { nombre: "Marcos Joaquin Gonzales", rol: "Frontend", descripcion: "Encargado de hacer el emaquetado y la logica del Menu(Navbar) y Detalle Pelicula." },
-  { nombre: "Tomas Sobrino", rol: "Frontend", descripcion: "Encargado de hacer el emaquetado del Footer." }
+  { nombre: "Marcos Lautaro Molina", rol: "Frontend", descripcion: "Encargado de hacer el maquetado y la logica del Login y el Sobre Nosotros." },
+  { nombre: "Basilio Martinez", rol: "Frontend", descripcion: "Encargado de el maquetado y logica de las Cards Peliculas y Proctector de Rutas ." },
+  { nombre: "Gonzalo Gaston Gomez", rol: "Frontend", descripcion: "Encargado del maquetado y logica del Registro y de la pagina de Inicio." },
+  { nombre: "Ezequiel Diaz", rol: "Frontend", descripcion: "Encargado de hacer el maquetado y logica del Error404 y el Contacto." },
+  { nombre: "Lisandro Araoz ", rol: "Frontend", descripcion: "Encargado de hacer el maquetado y la logica del Admin Peliculas." },
+  { nombre: "Marcos Joaquin Gonzales", rol: "Frontend", descripcion: "Encargado de hacer el maquetado y la logica del Menu(Navbar) y Detalle Pelicula." },
+  { nombre: "Tomas Sobrino", rol: "Frontend", descripcion: "Encargado de hacer el maquetado del Footer." }
 ];
 
 const AcercaNosotros = () => {
