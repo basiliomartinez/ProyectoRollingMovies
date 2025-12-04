@@ -12,7 +12,7 @@ const peliculaDestacada = {
   descripcionLarga:
     "Sonny Hayes era el fenómeno más prometedor de la Fórmula 1 en los años 90, hasta que un accidente brutal cambió su carrera para siempre. Años más tarde, retirado y alejado de los circuitos, es contactado por su antiguo compañero de equipo, Ruben Cervantes, que ahora dirige una escudería en crisis. Desesperado por recuperar prestigio, Ruben le propone a Sonny volver como piloto y mentor del novato Joshua Pearce, un talento increíble pero inestable. Mientras el equipo lucha por sobrevivir en el campeonato, Sonny tendrá que enfrentarse a sus miedos, a la prensa, a sus errores del pasado y a una última oportunidad de gloria.",
   imagen:
-    "https://image.tmdb.org/t/p/w500/5i6S7lTGQbCd4VjP5aYpKgNSsX.jpg", // poné el poster que quieran
+    "https://hips.hearstapps.com/hmg-prod/images/brad-pitt-f1-pelicula-685cfc14bf10d.jpg?crop=0.752xw:1.00xh;0.126xw,0&resize=1200:*", // poné el poster que quieran
   publicado: true,
 };
 
